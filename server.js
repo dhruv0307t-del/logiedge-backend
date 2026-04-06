@@ -9,6 +9,7 @@ const invoiceRoutes = require('./routes/invoices');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+
 // Middleware
 app.use(cors({ origin: '*' }));
 app.use(express.json());
@@ -41,6 +42,6 @@ app.use((err, _req, res, _next) => {
   res.status(500).json({ success: false, message: 'Internal server error' });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`LogiEdge API running on http://localhost:${PORT}`);
 });
